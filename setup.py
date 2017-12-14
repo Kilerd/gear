@@ -1,5 +1,7 @@
-from setuptools import setup
 from os import path
+
+from setuptools import setup
+
 from gearpy import __version__
 
 here = path.abspath(path.dirname(__file__))

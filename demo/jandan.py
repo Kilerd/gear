@@ -1,7 +1,8 @@
-from gearpy import TaskManager, Task, Kernel
-from gearpy.provider import Queue
 import asyncio
 import re
+
+from gearpy import Queue
+from gearpy import TaskManager, Task
 
 jandan = TaskManager(provider=Queue(), worker=5)
 
