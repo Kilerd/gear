@@ -1,0 +1,17 @@
+language: python
+python:
+- '3.6'
+install:
+- pip install aiohttp async_timeout beautifulsoup4 lxml
+- python setup.py install
+script:
+- python -m pytest --cov=gearpy tests
+- codecov
+deploy:
+  provider: pypi
+  user: kilerd
+  distributions: bdist_wheel
+  password:
+    secure: EYBD7Cn2Ixzl8gzgk1rS35QkFcxUgq2uTrvqBWasl0lgleK9dwYVluhefIvgCfHvXs69ktHmuh1DxpElq/sFBKKZ6S1HQvAvqlC551BVpHcjF893Yiwhlh8pZaENZT/eJvnuhBO3HfAQvljTl7ryWufdyAvKzl6NaIKhMjNhTOBtsFIkRzTt9Mk0mXdntytgIF+J6iAomjqVYimClqAx6mS/pbWt9Neb8VhXj+/fs/9rQyYLfjuazHqpbO1rJwPlh9uRipX3FYTfr3cU7L0SXuKaNNvDdlN6aUSD0pWyQPA9ZYQM8TkmJzYYnDEtlDmt9Dd66GGM+HpPy9xQ+ihxXXNHjOTJnZqQfOYh1a352esi0r2W6IvA6WdmlbarF4IbZ9ExdHmEKVKOOc9oK7i/xJepc1W4+nefHbcNfJqpun4XGQzU/Y9rTxT5X81nbcH0+WLQGSNW7BnCYGN1UxcoJRZtfh1jt1ZnYk0tpOqQOjMHxA2ov/fBX6APbfF0TozInwBg3XtL65dygryRhFS/iX9B6QNtLEy3n1I1nLAKoWnmD4M9WUogLJIg8EyrtBoqp9KHNGZZHKQQZug+Whdwpd+GqSF2i777kep1B9SKhYKk0LOwv/I9NCzuxhpJMKFNiyqsAd5Uq/yV8z3XNVhFf8gGW5xzBsaHxlySLcTUPyI=
+  on:
+    tags: true
