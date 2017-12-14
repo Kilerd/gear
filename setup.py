@@ -31,6 +31,7 @@ setup(
 
     install_requires=[
         'aiohttp',
+        'async_timeout',
         'beautifulsoup4',
         'lxml'
     ],
